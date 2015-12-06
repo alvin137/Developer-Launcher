@@ -19,3 +19,4 @@ Common Compress 라이브러리가 필요한데..
 
 http://commons.apache.org/proper/commons-compress/download_compress.cgi
 
+아, 또한 jdk 1.8 65를 사용해서 코딩함. jfxrt가 기본적으로 포함되있으니 따로 작성은 안함
