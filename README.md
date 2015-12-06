@@ -10,3 +10,6 @@
 다운로드 경로 변경.(.minecraft 손상 X)
 
 런쳐 내에서 minecraft.jar 실행
+
+##CHANGELOG
+씹어먹었다
