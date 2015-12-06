@@ -13,3 +13,9 @@
 
 ##CHANGELOG
 씹어먹었다
+
+##개발
+Common Compress 라이브러리가 필요한데..
+
+http://commons.apache.org/proper/commons-compress/download_compress.cgi
+
