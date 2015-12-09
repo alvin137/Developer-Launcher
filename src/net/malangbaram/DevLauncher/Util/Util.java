@@ -2,8 +2,8 @@ package net.malangbaram.DevLauncher.Util;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -15,13 +15,11 @@ public class Util {
 	 * 
 	 * @author MalangBaram
 	 */
-	public static void PGAction(File f) {
-		Process p;
-		try {
-			p = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + f.getAbsolutePath());
-			p.waitFor();
-		} catch (Exception e) {
-		}
+	public static void PGAction(File f) throws IOException {
+		ProcessBuilder builder = new ProcessBuilder(
+	            "cmd.exe", "/c", "cd \"%Appdata%\\.minecraft\" && java -jar launcher.jar");
+	        builder.redirectErrorStream(true);
+	        Process p = builder.start();
 	}
 
 	/*

@@ -3,6 +3,7 @@ package net.malangbaram.DevLauncher;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 
 import javafx.application.Application;
@@ -120,9 +121,19 @@ public class DevloperLauncher extends Application {
 					AlterUtil.showErrorAlter(Lang.TITLE, "현재 로컬에 모드팩이 설치되어 있지 않습니다. 설치 후 다시 시도 해주세요.");
 				} else if (myVersion.equals("확인실패")) {
 					AlterUtil.showErrorAlter(Lang.TITLE, "모드팩 버전확인이 불가능합니다. 서버접속이 불가능할 수도 있습니다");
-					Util.PGAction(launcher);
+					try {
+						Util.PGAction(launcher);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else {
-					Util.PGAction(launcher);
+					try {
+						Util.PGAction(launcher);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		});
