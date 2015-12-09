@@ -174,20 +174,23 @@ public class Util {
 	
 	public static String getnewUrl(String url) {
 		
-		try{
+		try {
 			URL lUrl = new URL(url);
 			HttpURLConnection connect;
 			BufferedReader rd;
 			String result;
-			
+
 			connect = (HttpURLConnection) lUrl.openConnection();
 			connect.setRequestMethod("GET");
 			rd = new BufferedReader(new InputStreamReader(connect.getInputStream()));
 			result = rd.readLine();
 			rd.close();
+			System.out.println(result);
 			return result;
+
+		} catch (Exception e) {
+			return null;
 		}
-		catch (Exception e) {}
-		return null;
+	
 	}
-}
+	}

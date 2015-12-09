@@ -34,10 +34,10 @@ public class DevloperLauncher extends Application {
 		myVersion = VersionManagementUtil.checkMyVersion(System.getenv("APPDATA") + "\\.minecraft", "\\mVersion.txt");
 		lastVersion = VersionManagementUtil.checkLastVersion("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/mod.txt");
 		if(myVersion.equals("unknown") || myVersion.equals("¹Ì¼³Ä¡")){
-			lastUrl = Util.getnewUrl("http://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/url.txt");
+			lastUrl = Util.getnewUrl("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/Url.txt");
 		}else{
 		if(Float.parseFloat(lastVersion)> Float.parseFloat(myVersion)){
-			lastUrl = Util.getnewUrl("http://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/url.txt");
+			lastUrl = Util.getnewUrl("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/Url.txt");
 		}
 		}
 			
