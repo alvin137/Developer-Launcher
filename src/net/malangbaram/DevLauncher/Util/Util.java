@@ -9,6 +9,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javafx.application.Platform;
+import net.malangbaram.DevLauncher.DevloperLauncher;
+import sun.net.www.content.text.plain;
+
 public class Util {
 	/*
 	 * 윈도우 프로그램 실행
@@ -20,8 +24,8 @@ public class Util {
 	            "cmd.exe", "/c", "cd \"%Appdata%\\.minecraft\" && java -jar launcher.jar");
 	        builder.redirectErrorStream(true);
 	        Process p = builder.start();
+	        Platform.exit();
 	}
-
 	/*
 	 * 디렉토리 삭제
 	 */
@@ -83,6 +87,7 @@ public class Util {
 				tmp += len / 1024 / 1024;
 				percent = tmp / 1229 * 100;
 				fos.write(buf, 0, (int) len);
+				System.out.println(percent);
 			}
 
 			fos.close();

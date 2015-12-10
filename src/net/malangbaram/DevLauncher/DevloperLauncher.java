@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.runtime.linker.JavaAdapterFactory;
 import net.malangbaram.DevLauncher.Util.CompressionUtil;
 import net.malangbaram.DevLauncher.Util.Util;
 import net.malangbaram.DevLauncher.Util.VersionManagementUtil;
@@ -30,17 +31,9 @@ public class DevloperLauncher extends Application {
 	public static boolean plzUpLauncher = VersionManagementUtil.booleanLauncherVersion("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/launcher.txt", Lang.VERSION);
 
 	public static void main(String[] args) throws Exception {
-		
 		myVersion = VersionManagementUtil.checkMyVersion(System.getenv("APPDATA") + "\\.minecraft", "\\mVersion.txt");
 		lastVersion = VersionManagementUtil.checkLastVersion("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/mod.txt");
-		if(myVersion.equals("unknown") || myVersion.equals("¹Ì¼³Ä¡")){
-			lastUrl = Util.getnewUrl("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/Url.txt");
-		}else{
-		if(Float.parseFloat(lastVersion)> Float.parseFloat(myVersion)){
-			lastUrl = Util.getnewUrl("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/Url.txt");
-		}
-		}
-			
+		lastUrl = Util.getnewUrl("https://raw.githubusercontent.com/alvin137/Developer-Launcher/master/version/Url.txt");
 		Application.launch(args);
 	}
 
@@ -124,14 +117,12 @@ public class DevloperLauncher extends Application {
 					try {
 						Util.PGAction(launcher);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else {
-					try {
+					try {	
 						Util.PGAction(launcher);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
